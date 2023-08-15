@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 每行显示 3 列，可以根据需要调整 */
+  grid-gap: 30px; /* 列之间的间距 */
+  margin-bottom: 30px;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.content {
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 18px;
+  color: #999;
+}
