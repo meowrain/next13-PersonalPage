@@ -1,7 +1,7 @@
 import Image from "next/image";
 import heroimg from "/public/heroimg.webp";
 import styles from "./page.module.css";
-import Button from "../components/btn/button";
+import MyButton from "../components/btn/button";
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -11,7 +11,7 @@ export default function Home() {
           Turning your Idea into Reality, We bring together the teams from the
           global tech industry
         </p>
-        <Button text="项目喵~" url="/projects"></Button>
+        <MyButton text="项目喵~" url="/projects"></MyButton>
       
       </div>
 

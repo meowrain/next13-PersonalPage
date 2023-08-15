@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import Button from "../../components/btn/button";
+import MyButton from "../../components/btn/button";
 export default function About() {
   return (
     <div className={styles.container}>
@@ -34,7 +34,7 @@ export default function About() {
             群号：887940241
             <br />
           </p>
-          <Button text="Contact" url="/contact" />
+          <MyButton text="Contact" url="/contact" />
         </div>
       </div>
     </div>
