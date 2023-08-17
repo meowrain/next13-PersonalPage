@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import MyButton from "../../components/btn/button";
+import MyButton from "@/components/btn/button";
 export default function About() {
   return (
     <div className={styles.container}>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import heroimg from "/public/heroimg.webp";
 import styles from "./page.module.css";
-import MyButton from "../components/btn/button";
+import MyButton from "@/components/btn/button";
 export default function Home() {
   return (
     <div className={styles.container}>

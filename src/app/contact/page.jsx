@@ -3,7 +3,7 @@ import {useState} from "react"
 import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import MyButton from "../../components/btn/button";
+import MyButton from "@/components/btn/button";
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
