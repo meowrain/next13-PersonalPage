@@ -3,7 +3,7 @@ import {useState} from "react"
 import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import MyButton from "@/components/btn/button";
+import Link from "next/link";
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -43,7 +43,7 @@ export default function Contact() {
             value={message}
             onChange={(e)=>setMessage(e.target.value)}
           ></textarea>
-          <MyButton url="#" text="咻！发射~" click={handleSubmit}></MyButton>
+          <Link href="#"><button className={styles.btn} onClick={handleSubmit}>咻！发射~</button></Link>
           {/* <button onClick={handleSubmit}>Submit</button> */}
         </form>
       </div>
