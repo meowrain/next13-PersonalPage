@@ -1,18 +1,34 @@
-import React from "react";
+"use client"
+import React, { useState, useEffect } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Image from "next/image";
-const getNeko = async () => {
+
+async function getNeko() {
   const res = await fetch("https://nekos.best/api/v2/neko", {
     cache: "no-store",
   });
   const json = await res.json();
   return json.results[0];
-};
-async function Photo() {
-  const imageData = await getNeko();
+}
+
+function Photo() {
+  const [imageData, setImageData] = useState(null);
+
+  useEffect(() => {
+    async function fetchImageData() {
+      const data = await getNeko();
+      setImageData(data);
+    }
+    fetchImageData();
+  }, []);
+
+  if (!imageData) {
+    return <p>Loading...</p>;
+  }
+
   return (
-    <div style={{ width: '300px' }}>
+    <div style={{ width: "300px" }}>
       <div className={styles.imageContainer}>
         <Image
           src={imageData.url}
@@ -20,7 +36,7 @@ async function Photo() {
           width={300}
           height={500}
           className={styles.img}
-        ></Image>
+        />
       </div>
       <div className={styles.content}>
         <h1 className={styles.title}>Artist: {imageData.artist_name}</h1>
@@ -31,23 +47,22 @@ async function Photo() {
     </div>
   );
 }
+
 export default function Blog() {
   return (
     <>
-     <h1 className={styles.title}>Random Neko Waifu</h1>
-
-    <div className={styles.container}>
-     
-      <Photo />
-      <Photo />
-      <Photo />
-      <Photo />
-      <Photo />
-      <Photo />
-      <Photo />
-      <Photo />
-      <Photo />
-    </div>
+      <h1 className={styles.title}>Random Neko Waifu</h1>
+      <div className={styles.container}>
+        <Photo />
+        <Photo />
+        <Photo />
+        <Photo />
+        <Photo />
+        <Photo />
+        <Photo />
+        <Photo />
+        <Photo />
+      </div>
     </>
   );
 }
